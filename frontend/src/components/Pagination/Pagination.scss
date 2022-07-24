@@ -1,0 +1,47 @@
+@import '../../styles/styles.scss';
+
+.pagination {
+  padding-top: 10px;
+  display: flex;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__pages-container {
+    margin: 0 auto;
+  }
+
+  &__buttons-container {
+    margin: 0 0 0 auto;
+  }
+
+  &__button {
+    margin-right: 5px;
+    padding: 2px;
+    font-weight: 500;
+    font-size: unquote('min(max(10px, 1.229vw), 20px)');
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #f0f3f8;
+    &:hover {
+      border: 2px solid $color-main;
+    }
+
+    &_page {
+      width: 35px;
+    }
+
+    &_active {
+      color: $color-main;
+      font-weight: 600;
+    }
+
+    :last-of-type {
+      margin-right: 0px;
+    }
+  }
+}

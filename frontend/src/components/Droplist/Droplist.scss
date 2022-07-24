@@ -1,0 +1,169 @@
+@import '../../styles/styles.scss';
+
+.droplist {
+  display: flex;
+
+  &_max {
+    width: 100%;
+  }
+
+  &__select {
+    position: relative;
+    width: 100%;
+    display: flex;
+  }
+
+  &__label {
+    width: 100%;
+  }
+
+  &__input {
+    color: $text-color;
+    margin: auto 0;
+    border: none;
+    padding: 0;
+    padding-left: 10px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+
+    &_readonly {
+      cursor: pointer;
+    }
+  }
+
+  &__items {
+    background-color: #fafafa;
+    padding: 0;
+    width: 100%;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    list-style: none;
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    flex-direction: column;
+    visibility: hidden;
+    box-sizing: border-box;
+    opacity: 0;
+    border-radius: 4px;
+    max-height: 250px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @include mq(1921, 9999) {
+      border-radius: 0.21vw;
+    }
+
+    &_bottom {
+      transform: translate(-50%, 0);
+      top: 100%;
+      left: 50%;
+    }
+
+    &_up {
+      transform: translate(-50%, 0);
+      bottom: 100%;
+      left: 50%;
+    }
+
+    &_open {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.2s, visibility 0.2s;
+    }
+
+    &_with-pesronal {
+      width: auto;
+      transform: translate(0, 0);
+      left: 0;
+      min-width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    color: $text-color;
+    padding: 10px;
+    cursor: pointer;
+    @include fontSize(18px, 22px);
+    align-items: center;
+
+    & > * {
+      margin-right: 5px !important;
+    }
+
+    & > :last-child {
+      margin-right: 0px !important;
+    }
+
+    @include mq(1921, 9999) {
+      @include fontSize(0.94vw, 1.15vw);
+    }
+
+    @include mq(1599) {
+      @include fontSize(16px, 19px);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $color-main;
+      color: #ffffff;
+    }
+
+    &:hover {
+      background-color: $color-main;
+      color: #ffffff;
+
+      & > .droplist__item-plus > .droplist__item-plus-fill {
+        fill: #ffffff;
+      }
+
+      & > .droplist__text_blue {
+        color: #ffffff;
+      }
+    }
+
+    &:focus {
+      background-color: $color-main;
+      color: #ffffff;
+
+      & > .droplist__item-plus > .droplist__item-plus-fill {
+        fill: #ffffff;
+      }
+
+      & > .droplist__text_blue {
+        color: #ffffff;
+      }
+    }
+  }
+
+  &__item-plus {
+    min-width: 13px;
+    height: 13px;
+    display: block;
+
+    @include mq(1921, 9999) {
+      min-width: 0.68vw;
+      height: 0.68vw;
+      background-size: 0.63vw 0.63vw;
+    }
+
+    &-fill {
+      fill: $color-main;
+    }
+  }
+
+  &__text {
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &_blue {
+      margin-left: 5px;
+      color: $color-main;
+    }
+  }
+}

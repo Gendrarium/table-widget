@@ -1,0 +1,36 @@
+@import '../../styles/styles.scss';
+
+.table {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5px;
+
+  &__row-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid $text-color;
+    border-bottom: 0;
+
+    &:last-of-type {
+      border-bottom: 1px solid $text-color;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    font-size: unquote('min(max(12px, 1.339vw), 24px)');
+    border-right: 1px solid $text-color;
+
+    &:last-of-type {
+      border-right: none;
+    }
+
+    &_bold {
+      font-size: unquote('min(max(14px, 1.329vw), 26px)');
+      font-weight: bold;
+      color: $color-main
+    }
+  }
+}
