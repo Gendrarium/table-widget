@@ -16,6 +16,7 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   function handleButtonClick(value: number) {
     setCountRows(value);
+    setPageNumber(0);
   }
   function handlePageChange(value: number) {
     setPageNumber(value);
